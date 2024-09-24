@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setBubbles((prevBubbles) => [...prevBubbles, generateBubble()]);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval); // Clean up the interval on unmount
   }, []);
