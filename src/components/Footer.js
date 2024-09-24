@@ -39,7 +39,7 @@ const Footer = () => {
             <FaWhatsapp size={24} />
           </a>
         </div>
-        <p>&copy; 2024 FreelancerHub. All rights reserved.</p>
+        <p>&copy; 2024 WebAlchemists. All rights reserved.</p>
       </div>
     </footer>
   );
