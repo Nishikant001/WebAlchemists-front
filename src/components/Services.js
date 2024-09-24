@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
+
 import web from "../assets/service/web.avif";
 import web1 from "../assets/service/ui.jpeg";
 import web2 from "../assets/service/seo.jpg";
@@ -8,35 +11,46 @@ const services = [
   {
     title: "Web Development",
     description: "Modern web development solutions using React and more.",
-    image: web, // Example image path
+    image: web,
   },
   {
     title: "UI/UX Design",
     description: "Professional and clean design for your applications.",
-    image: web1, // Example image path
+    image: web1,
   },
   {
     title: "SEO Optimization",
     description: "Boost your website's visibility on search engines.",
-    image: web2, // Example image path
+    image: web2,
   },
   {
     title: "App Development",
-    description: "odern app development solutions using React and more",
-    image: web3, // Example image path
+    description: "Modern app development solutions using React and more.",
+    image: web3,
   },
 ];
 
 const Services = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Only animate once when scrolled into view
+    });
+  }, []);
+
   return (
     <section className="py-20 bg-gradient-purple" id='service'>
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-12">Our Services</h2>
+        <h2 className="text-4xl font-bold text-gray-200 mb-12" data-aos="fade-up">
+          Our Services
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {services.map((service, idx) => (
             <div
               key={idx}
               className="group relative bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-500"
+              data-aos="fade-up" // AOS animation for each card
+              data-aos-delay={idx * 200} // Delay animation for staggered effect
             >
               {/* Service Image */}
               <div className="relative w-full h-64 overflow-hidden">

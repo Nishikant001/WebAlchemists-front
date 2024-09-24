@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
+
 import gym from "../assets/portfolio/gym.png";
 import webmaster from "../assets/portfolio/webmaster.png";
 import food from "../assets/portfolio/fastfood.png";
-
 
 const portfolioItems = [
   { img: gym, title: 'Monster Gym' },
@@ -11,15 +13,26 @@ const portfolioItems = [
 ];
 
 const Portfolio = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Only animate once when scrolled into view
+    });
+  }, []);
+
   return (
     <section className="py-20 bg-gradient-purple" id='portfolio'>
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-gray-900 text-center mb-12">Our Portfolio</h2>
+        <h2 className="text-4xl font-extrabold text-gray-200 text-center mb-12" data-aos="fade-up">
+          Our Portfolio
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {portfolioItems.map((item, idx) => (
             <div
               key={idx}
               className="group relative overflow-hidden rounded-lg shadow-lg transform transition-transform duration-500 hover:-translate-y-2"
+              data-aos="fade-up" // Animation type
+              data-aos-delay={idx * 200} // Staggered delay for animation
             >
               {/* Image with parallax effect */}
               <div className="relative overflow-hidden">

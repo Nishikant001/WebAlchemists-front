@@ -9,11 +9,13 @@ import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Wow from "./components/wow/Wow";
 
 
 function App() {
   return (
     <div className="App bg-gradient-purple">
+      <Wow/>
       
       <Navbar />
       <Hero />
