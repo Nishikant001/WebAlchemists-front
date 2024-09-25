@@ -31,7 +31,7 @@ const Footer = () => {
             <FaLinkedinIn size={24} />
           </a>
           <a
-            href="https://whatsapp.com"
+            href="tel:6372770485"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-green-500 transition-colors duration-300"

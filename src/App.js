@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Wow from "./components/wow/Wow";
+import WhatsAppButton from './components/WhatsAppButton';
 
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
         <Portfolio />
         <Testimonials />
         <Contact />
+        <WhatsAppButton/>
         <Footer />
       </div>
     </div>

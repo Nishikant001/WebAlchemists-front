@@ -23,7 +23,7 @@ const Testimonials = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
-      once: true, // Only animate once when scrolled into view
+      once: false, // Only animate once when scrolled into view
     });
   }, []);
 
